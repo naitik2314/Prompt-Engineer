@@ -1,7 +1,7 @@
 # Prompt Engineer 🚀✨
 
 ## Overview
-Prompt Engineer is a tool that leverages Google GenAI and python-dotenv for prompt generation. Get the best prompt for your LLM tasks with ease! 💡
+Prompt Engineer is a tool that leverages Google GenAI for prompt generation. Get the best prompt for your LLM tasks with ease! 💡
 
 ## How to Run ⚙️
 1. Install dependencies:
