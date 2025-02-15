@@ -1,4 +1,5 @@
 from google import genai
+from google.genai import types
 from dotenv import load_dotenv
 import os
 
@@ -14,13 +15,19 @@ def generate_prompt(task, provider, version):
     client = genai.Client(api_key=GEMINI_API_KEY)
 
     response = client.models.generate_content(
-        model = gemini_model
+        model = gemini_model,
+        config = types.GenerateContentConfig(
+            system_instruction=sys_instruct
+        ),
+        contents=[f"Generate a really extensive prompt for {task}. This prompt will be passed to {provider}'s {version} model. Use the best practices recommened for entering prompt for the given llm proveder and model"]
     )
+    return response
 
 
 provider = input("Enter the LLM (Large Language Model) provider you want to generate prompt for? (Examples of Providers: Anthropic, Gemini, ChatGPT, Ollama, Mistral etc). Press Enter for default value (ChatGPT): ").strip()
 version = input("Enter the LLM model you would like to use for the selected provider(press Enter for default value ('4o')): ").strip()
 gemini_model = input("Enter the Gemini model to use for generating the prompt or press enter to use the default (Default value is gemini-2.0-flash-exp): ").strip()
+task = input("Enter the prompt you want engineered: ").strip()
 
 if (provider == '') and (version == '') and (gemini_model == ''):
     provider = 'ChatGPT'
@@ -33,6 +40,8 @@ else:
 
 print(f"Selected provider: {provider}, selected model version: {version}")
 
+response = ""
 
-
+print("Here is the generated prompt!")
+print(response)
 
