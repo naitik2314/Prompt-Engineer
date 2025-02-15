@@ -40,7 +40,7 @@ else:
 
 print(f"Selected provider: {provider}, selected model version: {version}")
 
-response = ""
+response = generate_prompt(task=task, provider=provider, version=version)
 
 print("Here is the generated prompt!")
 print(response)
