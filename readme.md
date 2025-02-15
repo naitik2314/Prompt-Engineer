@@ -27,4 +27,3 @@ Prompt Engineer is a tool that leverages Google GenAI and python-dotenv for prom
 ## Contributing 🤝
 Feel free to share feedback, issue reports, or pull requests. Happy prompt engineering! 🚀
 
-# ...existing content if any...
