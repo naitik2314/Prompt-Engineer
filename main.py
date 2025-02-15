@@ -29,6 +29,7 @@ if (provider == '') and (version == '') and (gemini_model == ''):
 else:
     provider = provider
     version = version
+    gemini_model = gemini_model
 
 print(f"Selected provider: {provider}, selected model version: {version}")
 
